@@ -1,0 +1,37 @@
+import React, { useContext} from 'react';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from './fireConfig.js'
+import {UserContext} from '../../App'
+
+const Login = () => {
+    if(firebase.apps.length == 0){
+        firebase.initializeApp(firebaseConfig)
+    }
+    
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const googleSignUp = () => {   
+        firebase.auth().signInWithPopup(provider)
+        .then(result => {
+            const {displayName,email} = result.user;
+            const newUser = {name:displayName,email:email}
+            console.log(newUser);
+            setLoggedInUser(newUser);
+          })
+          .catch(error => {
+            
+            console.log(error.message);
+           
+          });
+    }
+    
+
+    return (
+        <div className="container  my-5" style={{marginLeft:'400px'}}>
+            <button className='btn btn-primary' onClick={googleSignUp}>Login With Google</button>
+        </div>
+    );
+};
+
+export default Login;

@@ -13,7 +13,7 @@ const Header = () => {
                     <Nav.Link href="/home">Home</Nav.Link>
                     <Nav.Link href="/home">Donation</Nav.Link>
                     <Nav.Link href="/event">Events</Nav.Link>
-                    <Nav.Link href="/home">Blog</Nav.Link>
+                    <Nav.Link href="/login">Login</Nav.Link>
                     <Button variant="primary">Register</Button>
                     <Button variant="warning" className="ml-3">Admin</Button>
                 </Nav>
