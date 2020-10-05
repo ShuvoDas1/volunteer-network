@@ -12,7 +12,7 @@ const MyEvents = () => {
         .then(data => setUserEvent(data))
     },[])
 
-
+    console.log(loggedInUser);
     return (
         <div>
             {

@@ -22,8 +22,7 @@ function App() {
   const [loggedInUser,setLoggedInUser]  = useState({
       name: '',
       email: '',
-      photo: '',
-      isSignIn: false
+      photo: ''
   });
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
