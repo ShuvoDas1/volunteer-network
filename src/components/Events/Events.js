@@ -6,8 +6,8 @@ const Events = (props) => {
     const id = props.id;
     const {name,img} = props.event;
     return (
-            <div className='event'>
-                <Link to='/registration'>
+            <div className='box'>
+                <Link to={'/registration/'+ id}>
                     <Card>
                         <Card.Img variant="top"  src={img} />
                         <Card.Body>

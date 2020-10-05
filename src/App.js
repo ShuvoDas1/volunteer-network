@@ -11,6 +11,8 @@ import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddEvent from './components/AddEvent/AddEvent';
 
 export const UserContext = createContext();
 
@@ -33,11 +35,14 @@ function App() {
           <Route exact path='/'>
               <Home></Home>
           </Route>
-          <Route path='/registration'>
+          <PrivateRoute path='/registration/:eventId'>
             <Registration></Registration>
-          </Route>
+          </PrivateRoute>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/addevent'>
+            <AddEvent></AddEvent>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>
