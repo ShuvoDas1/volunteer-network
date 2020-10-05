@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { UserContext } from '../../App';
 import logo from '../../logos/Group 1329.png'
 
 const Header = () => {
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext)
     return (
         <>
             <Navbar bg="light" variant="light" className='container'>
@@ -11,10 +13,9 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav className="ml-auto">
                     <Nav.Link href="/home">Home</Nav.Link>
-                    <Nav.Link href="/home">Donation</Nav.Link>
                     <Nav.Link href="/addevent">Add-Event</Nav.Link>
                     <Nav.Link href="/login">Login</Nav.Link>
-                    <Button variant="primary">Register</Button>
+                    <Nav.Link href="/myevents">{loggedInUser.name}</Nav.Link>
                     <Button variant="warning" className="ml-3">Admin</Button>
                 </Nav>
                 <br/>

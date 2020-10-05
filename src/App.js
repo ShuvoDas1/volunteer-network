@@ -13,6 +13,7 @@ import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddEvent from './components/AddEvent/AddEvent';
+import MyEvents from './components/MyEvents/MyEvents';
 
 export const UserContext = createContext();
 
@@ -21,7 +22,8 @@ function App() {
   const [loggedInUser,setLoggedInUser]  = useState({
       name: '',
       email: '',
-      photo: ''
+      photo: '',
+      isSignIn: false
   });
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
@@ -43,6 +45,9 @@ function App() {
           </Route>
           <Route path='/addevent'>
             <AddEvent></AddEvent>
+          </Route>
+          <Route path='/myevents'>
+              <MyEvents></MyEvents>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>

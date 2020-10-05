@@ -8,11 +8,11 @@ const Home = () => {
        .then(res => res.json())
        .then(data => setEvents(data))
     },[])
-    console.log(events);
+ 
     return (
-        <div className='grid'>
+        <div className='grid container'>
             {
-                events.map(event => <Events id={event.id} event={event}></Events>)
+                events.map(event => <Events id={event._id} event={event}></Events>)
             }
         </div>
     );
