@@ -19,7 +19,7 @@ const Login = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     
-    const googleSignUp = () => {   
+    const googleSignUp = (e) => {   
         firebase.auth().signInWithPopup(provider)
         .then(result => {
             const {displayName,email} = result.user;
@@ -32,6 +32,7 @@ const Login = () => {
             console.log(error.message);
            
           });
+          e.preventDefault();
     }
     
 

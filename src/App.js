@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -23,7 +23,10 @@ function App() {
       name: '',
       email: '',
       photo: ''
+      
   });
+
+ 
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
       <h3>Email:{loggedInUser.email}</h3>

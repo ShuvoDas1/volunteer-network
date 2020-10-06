@@ -15,16 +15,16 @@ const Header = () => {
                     <Nav.Link href="/home">Home</Nav.Link>
                     <Nav.Link href="/addevent">Add-Event</Nav.Link>
                     <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/myevents">{loggedInUser.name}</Nav.Link>
+                     <Nav.Link href="/myevents">{loggedInUser.name}</Nav.Link>
                     <Button variant="warning" className="ml-3">Admin</Button>
                 </Nav>
                 <br/>
             </Navbar>
-            <div  className="bg-light container">
+            <div  className="bg-light container m-auto" style={{textAlign:'center'}}>
                 <h3>I GREW BY HELPING PEOPLE IN NEED</h3>
                 <br />
-                <Form inline style={{marginLeft:'70px'}}>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-1" />
+                <Form inline >
+                    <FormControl type="text" placeholder="Search" className="mr-sm-1" style={{marginLeft:'375px'}} />
                     <Button variant="outline-success">Search</Button>
                 </Form>
             </div>
