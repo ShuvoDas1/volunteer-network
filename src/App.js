@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddEvent from './components/AddEvent/AddEvent';
 import MyEvents from './components/MyEvents/MyEvents';
+import Admin from './components/Admin/Admin';
 
 export const UserContext = createContext();
 
@@ -49,7 +50,10 @@ function App() {
             <AddEvent></AddEvent>
           </Route>
           <Route path='/myevents'>
-              <MyEvents></MyEvents>
+            <MyEvents></MyEvents>
+          </Route>
+          <Route path='/admin'>
+            < Admin></Admin>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>
