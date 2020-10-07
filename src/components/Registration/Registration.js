@@ -5,7 +5,7 @@ import { UserContext } from '../../App.js';
 
 const Registration = () => {
   const { eventId } = useParams();
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit,  errors } = useForm();
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [event, setEvent] = useState([])
@@ -14,14 +14,14 @@ const Registration = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/event/' + eventId)
+    fetch('https://blooming-savannah-28111.herokuapp.com/event/' + eventId)
       .then(res => res.json())
       .then(data => setEvent(data))
   }, [])
 
 
   const onSubmit = (data, e) => {
-    fetch('http://localhost:5000/registration', {
+    fetch('https://blooming-savannah-28111.herokuapp.com/registration', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

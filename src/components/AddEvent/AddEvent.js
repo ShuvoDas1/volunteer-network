@@ -1,14 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 import './AddEvent.css'
 const AddEvent = () => {
 
-    const history = useHistory();
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit,  errors } = useForm();
 
     const onSubmit = (data,e) => {
-        fetch('http://localhost:5000/addevent',{
+        fetch('https://blooming-savannah-28111.herokuapp.com/addevent',{
             method:'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(data)

@@ -7,14 +7,14 @@ const Admin = () => {
     const [allVolunteer,setAllVolunteer] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allvolunteer')
+        fetch('https://blooming-savannah-28111.herokuapp.com/allvolunteer')
         .then(res => res.json())
         .then(data=> setAllVolunteer(data))
     },[])
 
     const removeVolunteer = (id) => {
         console.log(id);
-        fetch('http://localhost:5000/deletevolunteer/'+id,{
+        fetch('https://blooming-savannah-28111.herokuapp.com/deletevolunteer/'+id,{
             method: 'DELETE',
         })
         .then(res => res.json())
