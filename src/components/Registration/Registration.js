@@ -28,10 +28,12 @@ const Registration = () => {
     })
       .then(res => res.json())
       .then(data => {
-        alert('Registration successfully')
+        
+        // alert('Registration successfully')
+        history.push('/myevents')
       })
     e.preventDefault();
-    history.push('/myevents')
+    
 
   }
 

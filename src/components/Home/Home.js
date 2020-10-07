@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div className='container'>
             {
-                events.map(event => <Events id={event._id} event={event}></Events>)
+                events.map(event => <Events key={event._id} event={event}></Events>)
             }
         </div>
     );
