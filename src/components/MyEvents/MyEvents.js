@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card, Row } from 'react-bootstrap';
 import { UserContext } from '../../App';
-import Event from './Event';
+import MyEvent from './MyEvent';
+import  './MyEvents.css'
 
 const MyEvents = () => {
     const [loggedInUser,setLoggedInUser] = useContext(UserContext);
@@ -15,13 +16,15 @@ const MyEvents = () => {
         })
     },[])
 
-
+    
+    
+  
     return (
-        <div>
+        <div className='container'>
             {
                 userEvent.map(event => 
                 <Row>
-                    <Event event={event}></Event>
+                    <MyEvent key={event._id} event={event}></MyEvent>
                 </Row>
               )
             }

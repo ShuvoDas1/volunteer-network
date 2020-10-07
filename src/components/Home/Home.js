@@ -10,7 +10,7 @@ const Home = () => {
     },[])
  
     return (
-        <div className='grid container'>
+        <div className='container'>
             {
                 events.map(event => <Events id={event._id} event={event}></Events>)
             }

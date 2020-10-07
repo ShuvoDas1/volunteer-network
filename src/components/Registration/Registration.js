@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import eventsData from '../../eventData/eventData.js'
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../App.js';
 
@@ -11,15 +10,18 @@ const Registration = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [event, setEvent] = useState([])
   const history = useHistory();
-  console.log(loggedInUser);
+
+
+
   useEffect(() => {
     fetch('http://localhost:5000/event/' + eventId)
       .then(res => res.json())
       .then(data => setEvent(data))
   }, [])
 
+  console.log(event);
+
   const onSubmit = (data, e) => {
-    const volunteerInfo = {...loggedInUser}
     fetch('http://localhost:5000/registration', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -56,7 +58,8 @@ const Registration = () => {
       {errors.description && <span style={{ color: 'red' }}>This field is required</span>}
       <br />
       <input name="eventName" defaultValue={event.name} className='form-control' type='text' ref={register({ required: true })} />
-      <br />
+      <br/>
+      <input name="img" defaultValue={event.img} style={{display:"none"}} type='text' ref={register({ required: true })} />
       <input type="submit" className='form-control' />
     </form>
   );
