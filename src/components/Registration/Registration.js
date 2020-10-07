@@ -19,7 +19,6 @@ const Registration = () => {
       .then(data => setEvent(data))
   }, [])
 
-  console.log(event);
 
   const onSubmit = (data, e) => {
     fetch('http://localhost:5000/registration', {

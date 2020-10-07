@@ -10,7 +10,16 @@ const Admin = () => {
         .then(res => res.json())
         .then(data=> setAllVolunteer(data))
     },[])
-    console.log(allVolunteer)
+
+    const removeVolunteer = (id) => {
+        console.log(id);
+        fetch('http://localhost:5000/deletevolunteer/'+id,{
+            method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+
     return (
         <div className='container'>
             <h3>Volunteer List</h3>
@@ -28,12 +37,12 @@ const Admin = () => {
                 <tbody>
                    {
                        allVolunteer.map(volunteer => 
-                        <tr>
+                        <tr key={volunteer._id}>
                             <td>{volunteer.name}</td>
                             <td>{volunteer.email}</td>
                             <td>{volunteer.date}</td>
                             <td>{volunteer.eventName}</td>
-                            <td><Button className='btn btn-danger'>Delete</Button></td>
+                            <td><Button className='btn btn-danger' onClick={()=> removeVolunteer(volunteer._id)}>Delete</Button></td>
                          </tr>
                          
                         )
