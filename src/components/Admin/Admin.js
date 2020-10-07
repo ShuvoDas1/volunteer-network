@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
 
@@ -17,12 +18,17 @@ const Admin = () => {
             method: 'DELETE',
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data){
+                alert('Volunteer deleted successfully')
+            }
+        })
     }
 
     return (
         <div className='container'>
             <h3>Volunteer List</h3>
+            <Link to='/addevent' className='ml-auto mr-3'>Add event</Link>
             <br />
             <Table striped bordered hover>
                 <thead>

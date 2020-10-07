@@ -7,9 +7,9 @@ const Events = (props) => {
     return (
         <div className=''>
             <Row>  
-                <Col md={3}>
+                <Col md={4}>
                     <Link to={'/registration/' + _id}>
-                        <Card style={{ width: '18rem',marginTop:'10px' }}>
+                        <Card style={{ width: '18rem',marginTop:'20px' }}>
                             <Card.Img variant="top" src={img} />
                             <Card.Body>
                                 <Card.Text>{name}</Card.Text>

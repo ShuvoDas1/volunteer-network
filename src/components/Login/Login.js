@@ -35,11 +35,23 @@ const Login = () => {
           e.preventDefault();
     }
     
+    const style = {
+      width: '500px',
+      height: '150px',
+      margin: 'auto',
+      padding: '20px'
+    }
 
     return (
-        <div className="container  my-5" style={{marginLeft:'400px'}}>
-            <button className='btn btn-primary' onClick={googleSignUp}>Login With Google</button>
+      <>
+        <div style={style}>
+            <div>
+              <h3>Login</h3>
+              <hr/>
+              <button className='btn btn-primary' onClick={googleSignUp}>Login With Google</button>
+            </div>
         </div>
+       </> 
     );
 };
 

@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <>
+    
             <Navbar bg="light" variant="light" className='container'>
                 <Navbar.Brand>
                     <img style={{ width: '80px', height: '50px' }} src={logo} alt="" />
@@ -25,18 +25,11 @@ const Header = () => {
                     <Nav.Link href="/myevents">{loggedInUser.name}</Nav.Link>
                     <Button onClick={handleAdmin} variant="warning" className="ml-3">Admin</Button>
                 </Nav>
-                <br />
-            </Navbar>
-            <div className="bg-light container m-auto" style={{ textAlign: 'center' }}>
-                <h3 style={{ marginLeft: '375px' }}>I GREW BY HELPING PEOPLE IN NEED</h3>
-                <br />
                 <Form inline >
-                    <FormControl type="text" placeholder="Search" className="mr-sm-1" style={{ marginLeft: '375px' }} />
+                    <FormControl type="text" placeholder="Search" className="mr-sm-1 ml-3" />
                     <Button variant="outline-success">Search</Button>
                 </Form>
-            </div>
-
-        </>
+            </Navbar>
 
     );
 };

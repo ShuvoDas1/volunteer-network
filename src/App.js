@@ -18,27 +18,25 @@ import Admin from './components/Admin/Admin';
 
 export const UserContext = createContext();
 
-
 function App() {
-  const [loggedInUser,setLoggedInUser]  = useState({
-      name: 'Shuvo Das',
-      email: 'shuvo0381@gmail.com',
-      photo: ''
-      
+  const [loggedInUser, setLoggedInUser] = useState({
+    name: '',
+    email: '',
+    photo: ''
+
   });
 
- 
+
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-      <h3>Email:{loggedInUser.email}</h3>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Header></Header>
         <Switch>
           <Route path='/home'>
-              <Home></Home>
+            <Home></Home>
           </Route>
           <Route exact path='/'>
-              <Home></Home>
+            <Home></Home>
           </Route>
           <PrivateRoute path='/registration/:eventId'>
             <Registration></Registration>

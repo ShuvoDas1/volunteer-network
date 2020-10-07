@@ -1,22 +1,10 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Redirect, useHistory } from 'react-router-dom';
 import extraVolunteer from '../../logos/extraVolunteer.png'
 
 const MyEvent = (props) => {
     const { _id, name, date,eventName,img } = props.event;
-    console.log(props.event);
-    const history = useHistory();
-
-    // const [userEvent,setUserEvent] = useState([]);
-    
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/userevent?email='+loggedInUser.email)
-    //     .then(res => res.json())
-    //     .then(result => {
-    //         setUserEvent(result);
-    //     })
-    // },[])
 
     const removeItem = (_id) => {
         console.log(_id);
@@ -38,6 +26,7 @@ const MyEvent = (props) => {
 
     return (
         <div>
+            <Row>
             <Col md={3}>
                 <Card style={{ width: '18rem', marginTop:'5px' }}>
                     <Card.Img variant="top" src={img} />
@@ -50,6 +39,7 @@ const MyEvent = (props) => {
                     <Button variant="primary"  onClick={()=>removeItem(_id)}>Cancel</Button>
                 </Card>
             </Col>
+            </Row>
         </div>
     );
 };

@@ -14,18 +14,18 @@ const MyEvents = () => {
         .then(result => {
             setUserEvent(result);
         })
+        
     },[])
 
-    
     
   
     return (
         <div className='container'>
             {
                 userEvent.map(event => 
-                <Row>
+             
                     <MyEvent key={event._id} event={event}></MyEvent>
-                </Row>
+                
               )
             }
         </div>
